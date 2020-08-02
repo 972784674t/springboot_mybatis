@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cimo.dao.UserDao">
+
+    <select id="findUserList" resultType="com.cimo.domain.User">
+        select * from user
+    </select>
+
+    <select id="findUserByName" resultType="com.cimo.domain.User">
+        select * from user where name = #{name}
+    </select>
+
+    <insert id="saveUser">
+        insert into user (name,money) values (#{name},#{money})
+    </insert>
+
+    <update id="updateUser">
+        update user set money=#{money} where name=#{name}
+    </update>
+
+</mapper>
